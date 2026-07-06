@@ -23,6 +23,8 @@ import { Contact } from '@/pages/Contact';
 import { FAQ } from '@/pages/FAQ';
 import { Privacy, Terms } from '@/pages/Legal';
 import { NotFound } from '@/pages/not-found';
+import { ComingSoon } from '@/components/ComingSoon';
+import { ClipboardList, FileText } from 'lucide-react';
 
 const queryClient = new QueryClient();
 
@@ -62,6 +64,38 @@ function AnimatedSwitch() {
           <Route path="/faq" component={FAQ} />
           <Route path="/privacy" component={Privacy} />
           <Route path="/terms" component={Terms} />
+          <Route path="/apply">
+            {() => (
+              <ComingSoon
+                title="Apply for This Role"
+                description="Our application system is under active development. Drop your email and we'll notify you the moment it launches so you can apply instantly."
+                icon={ClipboardList}
+                expectedDate="Q3 2025"
+                relatedFeatures={[
+                  { label: 'Browse More Jobs', href: '/jobs' },
+                  { label: 'Find Internships', href: '/internships' },
+                  { label: 'Skill Courses', href: '/courses' },
+                  { label: 'Find a Mentor', href: '/mentors' },
+                ]}
+              />
+            )}
+          </Route>
+          <Route path="/resume-builder">
+            {() => (
+              <ComingSoon
+                title="Resume Builder"
+                description="Create a stunning, ATS-friendly resume in minutes with our guided builder. We'll notify you when it launches."
+                icon={FileText}
+                expectedDate="Q3 2025"
+                relatedFeatures={[
+                  { label: 'Resources', href: '/resources' },
+                  { label: 'Find Mentors', href: '/mentors' },
+                  { label: 'Browse Jobs', href: '/jobs' },
+                  { label: 'View Courses', href: '/courses' },
+                ]}
+              />
+            )}
+          </Route>
           <Route component={NotFound} />
         </Switch>
       </motion.div>
