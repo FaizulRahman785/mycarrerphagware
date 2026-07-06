@@ -48,8 +48,8 @@ export function Contact() {
                     { icon: Mail, title: 'info@mbcareerconnect.com', sub: 'Online support' },
                     { icon: MessageCircle, title: '+91 98765 43210', sub: 'WhatsApp Chat' },
                     { icon: MapPin, title: 'MB Tech Park, Block C', sub: 'Koramangala, Bangalore, Karnataka 560034' },
-                  ].map(({ icon: Icon, title, sub }) => (
-                    <div key={title} className="flex items-start gap-4">
+                  ].map(({ icon: Icon, title, sub }, i) => (
+                    <div key={i} className="flex items-start gap-4">
                       <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
                         <Icon className="w-5 h-5 text-white" />
                       </div>

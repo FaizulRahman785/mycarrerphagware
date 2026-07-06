@@ -498,7 +498,7 @@ export function Home() {
                 className="relative mx-auto w-full max-w-[500px] lg:max-w-none"
               >
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-accent/20 rounded-3xl transform rotate-3 scale-105 filter blur-sm"></div>
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 dark:border-white/5">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10">
                   <img 
                     src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
                     alt="Career mentoring session" 

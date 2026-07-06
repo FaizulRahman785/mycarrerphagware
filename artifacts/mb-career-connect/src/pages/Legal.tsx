@@ -39,10 +39,11 @@ function LegalLayout({ title, icon: Icon, lastUpdated, children }: {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="bg-card border border-border rounded-3xl p-8 md:p-12 shadow-sm"
           >
-            <div className="prose prose-neutral dark:prose-invert max-w-none
+            <div className="prose prose-neutral max-w-none
               prose-headings:text-foreground prose-p:text-muted-foreground
               prose-li:text-muted-foreground prose-strong:text-foreground
               prose-a:text-primary prose-hr:border-border
+              prose-h2:text-foreground prose-h3:text-foreground prose-h4:text-foreground
             ">
               {children}
             </div>

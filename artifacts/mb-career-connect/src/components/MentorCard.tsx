@@ -1,7 +1,6 @@
 import React from 'react';
-import { Star, Building, CheckCircle, Calendar, MessageSquare } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
+import { Building, CheckCircle, Calendar, MessageSquare } from 'lucide-react';
+import { Link } from 'wouter';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { useTheme } from '@/contexts/ThemeContext';
 
@@ -21,8 +20,8 @@ export function MentorCard({
   const initials = name.split(' ').map(n => n[0]).join('');
 
   return (
-    <div 
-      className="bg-card border border-border/60 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 text-center flex flex-col h-full relative overflow-hidden group"
+    <div
+      className="bg-card border border-border/60 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 text-center flex flex-col h-full relative overflow-hidden group hover:-translate-y-1"
       style={{ boxShadow: 'var(--card-shadow)' }}
       data-cursor="card"
     >
@@ -33,8 +32,8 @@ export function MentorCard({
         <div className="relative group-hover:-translate-y-1 transition-transform duration-300">
           <Avatar className="w-24 h-24 border-4 border-card shadow-lg">
             <AvatarFallback className={`text-white text-2xl font-bold ${
-              theme === 'blue' 
-                ? 'bg-gradient-to-br from-blue-500 to-indigo-600' 
+              theme === 'blue'
+                ? 'bg-gradient-to-br from-blue-500 to-indigo-600'
                 : 'bg-gradient-to-br from-emerald-500 to-teal-700'
             }`}>
               {initials}
@@ -48,7 +47,7 @@ export function MentorCard({
 
       <h3 className="font-bold text-xl text-card-foreground relative z-20 group-hover:text-primary transition-colors">{name}</h3>
       <p className="text-sm font-semibold text-primary mb-3 relative z-20">{designation}</p>
-      
+
       <div className="flex items-center justify-center gap-1.5 text-sm text-muted-foreground font-medium mb-6 relative z-20">
         <Building className="w-4 h-4 text-primary/50" />
         <span>{company}</span>
@@ -65,24 +64,17 @@ export function MentorCard({
       </div>
 
       <div className="pt-5 border-t border-border/60 flex flex-col gap-4 relative z-20">
-        <div className="flex items-center justify-center gap-1.5 text-xs font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 py-1.5 px-3 rounded-lg mx-auto">
+        <div className="flex items-center justify-center gap-1.5 text-xs font-bold text-emerald-600 bg-emerald-500/10 py-1.5 px-3 rounded-lg mx-auto border border-emerald-500/20">
           <Calendar className="w-3.5 h-3.5" />
           {availability}
         </div>
-        
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <span tabIndex={0} className="w-full">
-              <Button className="w-full gap-2 font-bold bg-gradient-to-r from-primary to-accent hover:opacity-90 text-primary-foreground border-0 shadow-md cursor-not-allowed opacity-80" disabled>
-                <MessageSquare className="w-4 h-4" />
-                Book Session
-              </Button>
-            </span>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>Mentorship booking coming soon</p>
-          </TooltipContent>
-        </Tooltip>
+
+        <Link href="/apply" className="w-full">
+          <span className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg font-bold text-sm bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-md hover:opacity-90 hover:shadow-primary/30 transition-all duration-200 active:scale-95 cursor-pointer">
+            <MessageSquare className="w-4 h-4" />
+            Book Session
+          </span>
+        </Link>
       </div>
     </div>
   );

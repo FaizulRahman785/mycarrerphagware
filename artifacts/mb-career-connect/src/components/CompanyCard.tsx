@@ -49,7 +49,7 @@ export function CompanyCard({ name, industry, location, activeOpenings, categori
       </div>
 
       <div className="mt-auto pt-5 border-t border-border/60 flex items-center justify-between relative z-20">
-        <div className="px-3 py-1.5 bg-gradient-to-r from-emerald-500/10 to-green-500/10 text-emerald-600 dark:text-emerald-400 rounded-lg text-xs font-bold border border-emerald-500/20">
+        <div className="px-3 py-1.5 bg-gradient-to-r from-emerald-500/10 to-green-500/10 text-emerald-600 rounded-lg text-xs font-bold border border-emerald-500/20">
           {activeOpenings} Active Jobs
         </div>
         <Link href={`/jobs?company=${name}`} className="text-sm font-bold text-primary hover:text-accent transition-colors" data-cursor="pointer">
