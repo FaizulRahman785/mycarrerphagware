@@ -1,6 +1,6 @@
-# [Project name]
+# MB Career Connect
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A premium career growth platform frontend — jobs, internships, courses, mentorship, and hiring partners for students and professionals in India.
 
 ## Run & Operate
 
